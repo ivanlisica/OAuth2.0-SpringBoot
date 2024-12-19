@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalji Ulaznice</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      margin-top: 50px;
+    }
+    h1 {
+      color: #343a40;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .card {
+      margin: auto;
+      max-width: 600px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .card-body {
+      text-align: center;
+    }
+    .info-label {
+      font-weight: bold;
+      color: #007bff;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Naslov -->
+  <h1>Detalji Ulaznice</h1>
+
+  <!-- Kartica s prikazom detalja -->
+  <div class="card mt-4">
+    <div class="card-body">
+      <h5 class="card-title mb-4">Hello, <span th:text="${name}">User</span>!</h5>
+      <div class="mb-3">
+        <p class="info-label">ID:</p>
+        <p th:text="${ticket.id}"></p>
+      </div>
+      <div class="mb-3">
+        <p class="info-label">First name:</p>
+        <p th:text="${ticket.firstName}">firstname</p>
+      </div>
+      <div class="mb-3">
+        <p class="info-label">Last name:</p>
+        <p th:text="${ticket.lastName}">lastname</p>
+      </div>
+      <div class="mb-3">
+        <p class="info-label">Creation Time:</p>
+        <p th:text="${#dates.format(ticket.creationTime, 'dd.MM.yyyy HH:mm')}">01.01.2024</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
